@@ -38,13 +38,16 @@ class octopus {
   void display() {
     // Move object across the middle of the screen
     translate(r % width, height/2, 0);
+    
     // Spin the subsequently drawn spheres
     rotateX(cos(millis()/10000.0));
     rotateY(sin(millis()/10000.0));
+    
     // Reduce sphere detail to improve rendering
     // Draw body of the octopus
     sphereDetail(15);
     shape(octoBody);
+    
     // For loop iteratively draws limbs equal to the value set by the global
     // variable int numLimbs Default is 8
     for (int t = 0; t < numLimbs; t++) {

@@ -2,23 +2,28 @@
  Re-creation of Anthony Howe's Di-Octo kinetic sculpture */
 
 octopus drawOctopus;
+bkground getBackground;
 PImage oceanFloor;
 
 void setup() {
   size(1000, 1000, P3D);
   noStroke();
 
-  // Source: http://il3.picdn.net/shutterstock/videos/3460097/thumb/1.jpg
-  oceanFloor = loadImage("ocean_floor.jpg");
-  oceanFloor.resize(width, height);
-  background(oceanFloor);
-
+  // Instantiate new background
+  // and set background image.
+  // Note this is probably a bad form of
+  // Object Oriented Programming but simply
+  // done to take the concept to the nth degree
+  getBackground = new bkground();
+  getBackground.setbkground();
+  
   // Instantiate the octopus
   drawOctopus = new octopus();
 }
 
 void draw() {
-  background(oceanFloor);
+  //background(oceanFloor);
+  getBackground.setbkground();
   lights();
   
   // call display
